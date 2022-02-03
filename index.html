@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="./dist/reset.css">
+		<link rel="stylesheet" href="./dist/reveal.css">
+		<link rel="stylesheet" href="./dist/theme/black.css">
+		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/asciinema-player.css" />
+		
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="./plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			<section data-markdown="slides.md"></section>
+			</div>
+		</div>
+
+		<script src="./dist/reveal.js"></script>
+		<script src="./plugin/notes/notes.js"></script>
+		<script src="./plugin/markdown/markdown.js"></script>
+		<script src="./plugin/highlight/highlight.js"></script>
+		<script src="./plugin/anything/plugin.js"></script>
+		<script src="./plugin/asciinema/asciinema-player.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				anything: [ 
+                  {className: "asciicast",
+                           defaults: { theme: 'monokai', fontSize: '15px' },
+                           initialize: (function(container, options) {
+									 console.log(options.URL, container, options);
+									 const player = AsciinemaPlayer.create(options.URL, container, options);
+									//  Reveal.on( 'slidetransitionend', event => {
+									// 	console.log(player, event.currentSlide.contains(player.el));
+									// 	if(event.currentSlide.contains(player.el)) {
+									// 		player.el.play();
+									// 	}
+									// 	else player.el.pause();
+									//  });
+                            })
+                   },
+				],
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealAnything],
+			});
+		</script>
+	</body>
+</html>
