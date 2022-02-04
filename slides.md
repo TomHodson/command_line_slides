@@ -17,7 +17,7 @@ A text based interface to your computer <!-- .element: class="fragment" -->
 <div>
     <!--
     {
-        "URL": "casts/ping.cast",
+        "URL": "casts/task1.cast",
         "poster": "npt:1:23",
         "autoplay": false,
         "preload": true,
@@ -35,31 +35,6 @@ A text based interface to your computer <!-- .element: class="fragment" -->
 ## Why don't people just make a GUI?
 ---
 ## What is the command line itself?
----
-A REPL or Read Evaluate Print Loop
-
-Let's write one
-```python
-while True:
-    try:
-        input_line = input('>>> ')
-        print(eval(input_line))
-    except KeyboardInterrupt: break
-```
----
-<div class="asciicast">
-    <!--
-    {
-        "URL": "casts/repl.cast",
-        "poster": "npt:0:5",
-        "autoplay": false,
-        "preload": true,
-        "font-size": "medium",
-        "theme": "asciinema",
-        "rows":10
-    } 
-    -->
-</div>
 ---
 The command line is also a REPL, it just uses different syntax.  
 ---
