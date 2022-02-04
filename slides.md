@@ -14,10 +14,13 @@ Go to **www.menti.com** and use the code **9132 7354**
 A text based interface to your computer <!-- .element: class="fragment" -->
 
 ---
-<div>
+## The Command Line
+<div class="asciicast">
     <!--
     {
         "URL": "casts/task1.cast",
+        "idle_time_limit": 0.5, 
+        "speed":1,
         "poster": "npt:1:23",
         "autoplay": false,
         "preload": true,
