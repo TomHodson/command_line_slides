@@ -27,7 +27,7 @@
 		<script src="./plugin/markdown/markdown.js"></script>
 		<script src="./plugin/highlight/highlight.js"></script>
 		<script src="./plugin/anything/plugin.js"></script>
-		<script src="./plugin/asciinema/asciinema-player.min.js"></script>
+		<script src="./plugin/asciinema/asciinema-player.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -36,17 +36,21 @@
 				hash: true,
 				anything: [ 
                   {className: "asciicast",
-                           defaults: { theme: 'monokai', fontSize: '15px' },
                            initialize: (function(container, options) {
-									 console.log(options.URL, container, options);
-									 const player = AsciinemaPlayer.create(options.URL, container, options);
-									//  Reveal.on( 'slidetransitionend', event => {
-									// 	console.log(player, event.currentSlide.contains(player.el));
-									// 	if(event.currentSlide.contains(player.el)) {
-									// 		player.el.play();
-									// 	}
-									// 	else player.el.pause();
-									//  });
+									const defaults = { fontSize: '15px' , start : 0, "idle_time_limit": 2};
+									options = {...defaults, ...options};
+									//  console.log(options.URL, container, options);
+									 const player = asciinema.player.js.CreatePlayer(container, options.URL, options);
+									//  console.log(player);
+									 Reveal.on( 'slidetransitionend', event => {
+										// console.log(player, event.currentSlide.contains(container));
+										if(event.currentSlide.contains(container)) {
+											console.log(options.start);
+											player.setCurrentTime(options.start);
+											player.play();
+										}
+										else player.pause();
+									 });
                             })
                    },
 				],
