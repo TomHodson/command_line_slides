@@ -10,6 +10,8 @@
 		<link rel="stylesheet" href="./dist/reveal.css">
 		<link rel="stylesheet" href="./dist/theme/black.css">
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/asciinema-player.css" />
+		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/reveal-asciinema-theme.css" />
+		
 		
 
 		<!-- Theme used for syntax highlighted code -->
@@ -37,7 +39,7 @@
 				anything: [ 
                   {className: "asciicast",
                            initialize: (function(container, options) {
-									const defaults = { fontSize: '15px' , start : 0, "idle_time_limit": 2};
+									const defaults = {fontsize: "medium", theme: "reveal", start : 0, "idle_time_limit": 2};
 									options = {...defaults, ...options};
 									//  console.log(options.URL, container, options);
 									 const player = asciinema.player.js.CreatePlayer(container, options.URL, options);

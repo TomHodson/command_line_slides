@@ -8,7 +8,6 @@ Go to **www.menti.com** and use the code **9132 7354**
 ---
 ## Results
 <div style='position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;'><iframe sandbox='allow-scripts allow-same-origin allow-presentation' allowfullscreen='true' allowtransparency='true' frameborder='0' height='315' src='https://www.mentimeter.com/embed/c92cb2f99d7edcaa0b0be2a177c5f231/1edf2d837bdd' style='position: absolute; top: 0; left: 0; width: 100%; height: 100%;' width='420'></iframe></div>
-
 ---
 ## What is the command line?
 A text based interface to your computer <!-- .element: class="fragment" -->
@@ -20,15 +19,13 @@ A text based interface to your computer <!-- .element: class="fragment" -->
     {
         "URL": "casts/task1.cast",
         "idle_time_limit": 0.5, 
+        "start":12,
         "speed":1,
-        "poster": "npt:1:23",
-        "autoplay": false,
-        "preload": true,
-        "font-size": "medium",
-        "theme": "asciinema"
+        "poster": "npt:1:23"
     } 
     -->
 </div>
+<!-- <asciinema-player src="casts/task1.cast"></asciinema-player> -->
 
 ---
 ## Why use it?
@@ -147,6 +144,13 @@ Ok now you try:
 ### Git
 
 ---
+### More complex commands
+
+---
+---
+<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=wget+-P+%2Fpath%2Fto%2Fdestination%2Fdirectory%2F+-mpck+--user-agent%3D%22%22+-e+robots%3Doff+--wait+1+-E+https%3A%2F%2Fwww.example.com%2F#" data-background-interactive data-background-transition="zoom"-->
+---
+
 ## Bash Scripts
 ```bash [1-2|3|4]
 #!/usr/bin/env bash
@@ -163,10 +167,6 @@ echo "The variable is ${variable}"
     {
         "URL": "casts/ping.cast",
         "poster": "npt:1:23",
-        "autoplay": false,
-        "preload": true,
-        "font-size": "medium",
-        "theme": "asciinema"
     } 
     -->
 </div>
@@ -178,10 +178,6 @@ echo "The variable is ${variable}"
     {
         "URL": "casts/brew.cast",
         "poster": "npt:1:23",
-        "autoplay": false,
-        "preload": true,
-        "font-size": "medium",
-        "theme": "asciinema"
     } 
     -->
 </div>
