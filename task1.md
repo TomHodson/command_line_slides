@@ -22,7 +22,7 @@ These files are a de facto standard to have in your python project. README.md de
 ```bash
 nano README.md
 ```
-In nano, `# FileSize` and then `CTRL-O` to save and `CTRL-X` to exit.
+In nano, `# FileSize` and then `CTRL-O` and then `ENTER` to save and `CTRL-X` to exit.
 
 I'll show you a differnt trick to quickly make a one line file:
 ```bash
@@ -48,7 +48,7 @@ Now make a python file called "filesize.py" inside it so that it ends up at `fil
 Arrange that it contains:
 ```python
 import os, sys
-arguments = sys.argv
+arguments = sys.argv[1:] # The first argument is actually the name of the script
 if len(arguments) == 1: print(os.path.getsize(arguments[0]))
 else: print(f'filesize requires exactly one argument! Got {len(arguments)}')
 ```
@@ -63,6 +63,8 @@ To give it an argument, let's try README.md, run:
 python filesize/filesize.py README.md
 ```
 
+### A recording of me doing the above, mistakes and all
+[![asciicast](https://asciinema.org/a/466633.svg)](https://asciinema.org/a/466633)
 
 
 [MD]: https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
