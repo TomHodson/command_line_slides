@@ -74,6 +74,17 @@ $ command -f --longer-flag --keyword="value" arg1 arg2 ...
 $ git commit --dry-run -m "My commit message" ./*.py 
 ```
 ---
+For really complex commands you find online, [explainshell.com]() is nice.
+
+Let's try
+```bash
+wget -P /path/to/destination/directory/ \ 
+    -mpck --user-agent="" -e robots=off --wait 1 \
+    -E https://www.example.com/
+```
+---
+<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=wget+-P+%2Fpath%2Fto%2Fdestination%2Fdirectory%2F+-mpck+--user-agent%3D%22%22+-e+robots%3Doff+--wait+1+-E+https%3A%2F%2Fwww.example.com%2F#" data-background-interactive data-background-transition="zoom"-->
+---
 ## Getting around
 ```bash
 $ pwd # print your 'present working directory' 
@@ -180,6 +191,5 @@ echo "The variable is ${variable}"
 </div>
 
 ---
-<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=wget+-P+%2Fpath%2Fto%2Fdestination%2Fdirectory%2F+-mpck+--user-agent%3D%22%22+-e+robots%3Doff+--wait+1+-E+https%3A%2F%2Fwww.example.com%2F#" data-background-interactive-->
----
+
 
