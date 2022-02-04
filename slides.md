@@ -14,6 +14,20 @@ Go to **www.menti.com** and use the code **9132 7354**
 A text based interface to your computer <!-- .element: class="fragment" -->
 
 ---
+<div>
+    <!--
+    {
+        "URL": "casts/ping.cast",
+        "poster": "npt:1:23",
+        "autoplay": false,
+        "preload": true,
+        "font-size": "medium",
+        "theme": "asciinema"
+    } 
+    -->
+</div>
+
+---
 ## Why use it?
 - A lot of great tools are command line only!<!-- .element: class="fragment" -->
 - Some of these tools are better as command line applications. <!-- .element: class="fragment" -->
@@ -114,7 +128,7 @@ $ cd ../  # go up one level from wherever you are
 ## Relative Paths
 
 - Relative paths are specified relative to the current directory. `pwd`
-- If you're `/home/name` then `folder/file` would refer to `/home/name/folder/file`
+- If you're at `/home/name` then `folder/file` would refer to `/home/name/folder/file`
 ---
 - `./folder/file` would also refer to `/home/name/folder/file`
 - `../folder/file` would refer 'one level up' to `/home/folder/file`
@@ -137,6 +151,10 @@ $ mv file1 folder/file2 # moves and renames a file or folder
 $ cp file1 folder/file2 # copies and renames a file or folder
 $ chmod +x script #changes the permissions of a file, google this. 
 ```
+
+---
+Ok now you try:
+[tomhodson.github.io/command_line_slides/task1](https://tomhodson.github.io/command_line_slides/task1)
 
 ---
 ### Package managers
