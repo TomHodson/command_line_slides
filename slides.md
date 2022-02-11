@@ -43,7 +43,7 @@ Go to **www.menti.com** and use the code **9132 7354**
 - CMD tools are more flexible. <!-- .element: class="fragment" -->
 ---
 ## Walking the filesystem
-<img class="r-stretch" src="/images/filesystem.svg">
+<img class="r-stretch" src="./images/filesystem.svg">
 
 ---
 ## Paths
