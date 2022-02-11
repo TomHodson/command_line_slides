@@ -1,4 +1,5 @@
 # Task 2
+# tomhodson.github.io/command_line_slides/task2
 ## Write some scripts
 ### Location
 Make sure that you're in the root of your temporary project from task 1 using `pwd`

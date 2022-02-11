@@ -1,6 +1,6 @@
 ## The Command Line
 _What's the first thing you think of when you hear this?_
-Go to **www.menti.com** and use the code **9132 7354**
+Go to **www.menti.com** with code **9132 7354**
 <!-- https://www.albionresearch.com/tools/urlencode -->
 <img src="https://api.qrserver.com/v1/create-qr-code/?data=https%3A%2F%2Fwww.menti.com%2Fp6qu6susje&size=100x100&qzone=1&format=svg&ecc=L" alt="Use Menti code 9132 7354" title="Menti QR Code" width = "200px"/>
 
@@ -39,8 +39,10 @@ Go to **www.menti.com** and use the code **9132 7354**
 
 ---
 ## Why don't people just make a GUI?
-- It's easier and faster. <!-- .element: class="fragment" -->
-- CMD tools are more flexible. <!-- .element: class="fragment" -->
+- Easier and faster to create. <!-- .element: class="fragment" -->
+- More flexible. <!-- .element: class="fragment" -->
+---
+## Using the command line
 ---
 ## Walking the filesystem
 <img class="r-stretch" src="./images/filesystem.svg">
@@ -48,11 +50,13 @@ Go to **www.menti.com** and use the code **9132 7354**
 ---
 ## Paths
 ```bash
-home/tom/im_a_path/im_a_file.txt
+/bin/ls
+/cm/shared/applications/
+/home/tjones/notes.txt
 ```
-- Paths tell commands where to look for files and folders. 
-- A way to specifiy a file or folder with a text string.
-- They look a bit like URLs because they share some ideas.
+- A way to specifiy a file or folder with a text string
+- We use them to tell commands where to look for files and folders
+- Note the similarity to URLs
 
 ---
 ## Absolute Paths
@@ -61,7 +65,8 @@ home/tom/im_a_path/im_a_file.txt
 ```bash 
 /bin/ls
 ```
-This means they start from the root directory.
+These always refer to a specific location. 
+A bit like a GPS coordinate.
 ---
 ## Relative Paths
 
@@ -70,6 +75,7 @@ Relative paths are specified relative to the current directory.
 tjones/notes.txt
 ../hpc-0123/data.hdf5 #goes one level up
 ```
+More like a giving someone directons, 'From here, go left then right'
 ---
 ### Looking around: ls and pwd
 ```bash
@@ -80,20 +86,23 @@ ls # List the files and folders in the pwd
 ---
 
 ## Getting around
-```bash
+```shell
 $ cd / # go to the root directory
 $ cd   # go to your home directory
+$ cd ~ # go to your home directory
 $ cd ~/foo  # go to some folder in your home directory
+$ cd /cm/shared/applications/ # go to an absolute path
 $ cd ../  # go up one level from wherever you are
+$ cd ../../  # go up two levels from wherever you are
 ```
 ---
 ## Looking in files
 
-```bash
+```console
 $ cat file # outputs a file to the terminal 
 $ nano file # opens a file for basic editing
 ```
-To save the file in nano press `CTRL-O` (for output)
+To save the file in nano press `CTRL-O` (O for output) then press `ENTER`
 To exit press `CTRL-X`
 
 ---
@@ -107,6 +116,22 @@ $ rm file #deletes the file permenantly
 # be careful with rm!
 ```
 ---
+## Getting stuck
+If you can't figure out how to use a command
+i.e git
+
+Quick refreshser
+```bash
+git --help
+git -h # some older commands only accept -h
+```
+
+Offline Manual
+```bash
+man git # press down to read and then q to exit
+```
+Or just google it, that's what I usually do.
+---
 Ok now you try!
 
 [tomhodson.github.io/command_line_slides/task1](https://tomhodson.github.io/command_line_slides/task1)
@@ -114,56 +139,97 @@ Ok now you try!
 Slides at
 
 [tomhodson.github.io/command_line_slides](https://tomhodson.github.io/command_line_slides)
+
 ---
 <!-- .slide: data-background-iframe="https://tomhodson.github.io/command_line_slides/task1" data-background-interactive data-background-transition="zoom"-->
 ---
-### Demo of me doing task 1
+### Demo of task 1
 <div class="asciicast">
     <!--
     {
         "URL": "casts/task1.cast",
         "poster": "npt:2:30",
         "font-size": "0.5em",
-        "idle_time_limit": 0.5, 
-        "start":12
+        "idle_time_limit": 0.5
     } 
     -->
 </div>
 ---
+### A more complex command
 
-## Second Half
----
-## A more complex command
 ```bash
-$ git commit --dry-run -m "My commit message" ./*.py 
+$ git commit --dry-run -m "My commit message"
 ```
 ---
-
+<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=git+commit+--dry-run+-m+%22My+commit+message%22+" data-background-interactive data-background-transition="zoom"-->
 ---
-
+### Scripting
+Putting multiple commands together in a file makes a shell script. 
+---
 ## A Simple Script
 ```bash
 #!/usr/bin/env bash
-echo "Hello World"
-echo "You invoked this script with $# arguments, the first one was $1"
-variable=42
-echo "The variable is ${variable}"
+cd ~
+mkdir filesize
+cd filesize
+echo "numpy" > requirements.txt
+echo "# File Size" > README.md
+mkdir filesize
+cp ~/somehwere_else/filesize.py filesize/filesize.py
+python filesize/filesize.py README.md
 ```
+
 ---
-
-## Running a script
-
+## Script Arguments
 ```bash
-chmod +x my_script.sh
+#!/usr/bin/env bash
+echo Hello World
+echo You invoked this script with $# arguments
+echo The first one was $1
+variable=42
+echo The variable is ${variable}
+```
+<div class="asciicast">
+    <!--
+    {
+        "URL": "casts/example_script.cast",
+        "poster": "npt:2:30",
+        "font-size": "0.5em",
+        "idle_time_limit": 0.5
+    } 
+    -->
+</div>
+
+---
+### Running a script
+```bash
+sh my_script.sh
+```
+Or
+```bash
+chmod +x my_script.sh # just the first time
 ./my_script.sh
 ```
 
 ---
-demo of running the script
+### For loops
+```bash
+#!/usr/bin/env bash
+for python_file in *.py
+do
+    echo $python_file # prints the filename
+    echo -------------
+    cat $python_file # outputs its contents
+done
+echo I printed all the python files
+```
 
 ---
-Task 2
+### Task 2
 
+[tomhodson.github.io/command_line_slides/task2](https://tomhodson.github.io/command_line_slides/task2)
+---
+<!-- .slide: data-background-iframe="https://tomhodson.github.io/command_line_slides/task2" data-background-interactive data-background-transition="zoom"-->
 ---
 ### Demo of me doing task 2
 <div class="asciicast">
@@ -177,43 +243,50 @@ Task 2
     } 
     -->
 </div>
----
-# FIN
----
-
-<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=wget+-P+%2Fpath%2Fto%2Fdestination%2Fdirectory%2F+-mpck+--user-agent%3D%22%22+-e+robots%3Doff+--wait+1+-E+https%3A%2F%2Fwww.example.com%2F#" data-background-interactive data-background-transition="zoom"-->
-
 
 ---
+### Useful tools
 
-<div class="asciicast">
-    <!--
-    {
-        "URL": "casts/git.cast",
-        "poster": "npt:2:30",
-        "autoplay": false,
-        "preload": true,
-        "font-size": "medium",
-        "rows":30
-    } 
-    -->
-</div>
 ---
+### package managers
+- `apt-get` (linux)
+- `brew` (mac)
+- `pip` (python) 
+- `conda` (python + other)
+- `npm` (javascript)
 
+---
+## Pipes
 ```bash
-$ command -f --longer-flag --keyword="value" arg1 arg2 ...
+# this prints any line that contains string_to_find
+cat *.py | grep string_to_find
 ```
 
 ---
-For really complex commands you find online, [explainshell.com]() is nice.
-
-Let's try
+## Environment variables
+Like global variables in python.
 ```bash
-wget -P /path/to/destination/directory/ \ 
-    -mpck --user-agent="" -e robots=off --wait 1 \
-    -E https://www.example.com/
+$ export name=value
+$ echo $name
+value
+$ echo $HOME
+/Users/tom
+$ env #prints all variables
+```
+
+---
+## Downloading things
+```bash
+$ curl url # make almost any kind of HTTP request
+$ wget url # many differenet ways to download things
+$ youtube-dl # automated youtube video downloader
 ```
 ---
-<!-- .slide: data-background-iframe="https://www.explainshell.com/explain?cmd=wget+-P+%2Fpath%2Fto%2Fdestination%2Fdirectory%2F+-mpck+--user-agent%3D%22%22+-e+robots%3Doff+--wait+1+-E+https%3A%2F%2Fwww.example.com%2F#" data-background-interactive data-background-transition="zoom"-->
+## Done!
+
+
+
+
+
 
 

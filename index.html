@@ -9,6 +9,8 @@
 		<link rel="stylesheet" href="./dist/reset.css">
 		<link rel="stylesheet" href="./dist/reveal.css">
 		<link rel="stylesheet" href="./dist/theme/night.css">
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- <link rel="stylesheet" href="plugin/highlight/github-dark.css"> -->
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/asciinema-player.css" />
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/reveal-asciinema-theme.css" />
 		<style>
@@ -17,10 +19,6 @@
 				line-height: 1.2em;
 			}
 		</style>
-		
-
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="./plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
@@ -35,6 +33,7 @@
 		<script src="./plugin/highlight/highlight.js"></script>
 		<script src="./plugin/anything/plugin.js"></script>
 		<script src="./plugin/asciinema/asciinema-player.js"></script>
+		<script src="./plugin/countdown/countdown.js"></script>
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -62,6 +61,7 @@
                    },
 				],
 				// Learn about plugins: https://revealjs.com/plugins/
+				dependencies: [{ src: "plugin/countdown/countdown.js" },],
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealAnything],
 			});
 		</script>
