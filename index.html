@@ -8,10 +8,15 @@
 
 		<link rel="stylesheet" href="./dist/reset.css">
 		<link rel="stylesheet" href="./dist/reveal.css">
-		<link rel="stylesheet" href="./dist/theme/black.css">
+		<link rel="stylesheet" href="./dist/theme/night.css">
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/asciinema-player.css" />
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/reveal-asciinema-theme.css" />
-		
+		<style>
+			code {
+				font-size: 1.2em;
+				line-height: 1.2em;
+			}
+		</style>
 		
 
 		<!-- Theme used for syntax highlighted code -->
@@ -39,7 +44,7 @@
 				anything: [ 
                   {className: "asciicast",
                            initialize: (function(container, options) {
-									const defaults = {fontsize: "large", theme: "reveal", start : 0, "idle_time_limit": 2};
+									const defaults = {'font-size': "large", theme: "asciinema", start : 0, "idle_time_limit": 2};
 									options = {...defaults, ...options};
 									//  console.log(options.URL, container, options);
 									 const player = asciinema.player.js.CreatePlayer(container, options.URL, options);

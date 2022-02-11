@@ -1,7 +1,7 @@
 .asciinema-theme-reveal .asciinema-terminal {
     color: #f8f8f2;                    /* default text color */
-    background-color: #191919;         /* terminal background color */
-    border-color: #191919;
+    background-color: rgba(0.2, 0.2, 0.2);         /* terminal background color */
+    border-color: rgba(0.2, 0.2, 0.2);
   }
   .asciinema-theme-reveal .fg-bg {    /* inverse for default text color */
     color: #272822;

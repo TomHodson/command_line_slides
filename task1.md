@@ -16,7 +16,7 @@ pwd #check you're in the right place
 mkdir filesize #make a folder here called filesize
 ```
 
-### Make README.md and requirments.txt files
+### Make README.md and requirements.txt files
 These files are a de facto standard to have in your python project. README.md describes your project as in written in [MarkDown][MD], which is also what this [document is written in](task1.md).
 
 ```bash
