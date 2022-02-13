@@ -8,11 +8,15 @@
 
 		<link rel="stylesheet" href="./dist/reset.css">
 		<link rel="stylesheet" href="./dist/reveal.css">
-		<link rel="stylesheet" href="./dist/theme/night.css">
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-		<!-- <link rel="stylesheet" href="plugin/highlight/github-dark.css"> -->
+		<link rel="stylesheet" href="./dist/theme/night.css"> <!-- This is the theme for the slides -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css"> <!-- This is the theme for the code highlighting -->
+		<!-- <link rel="stylesheet" href="plugin/highlight/github-dark.css"> --> <!-- An alternative code theme I didn't like as much -->
 		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/asciinema-player.css" />
-		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/reveal-asciinema-theme.css" />
+		
+		<!-- This is a modified theme for asciinema to git better with reveal.js's night theme -->
+		<link rel="stylesheet" type="text/css" href="./plugin/asciinema/reveal-asciinema-theme.css" /> 
+		
+		<!-- An extra bit of CSS to make the code blocks a little bit bigger -->
 		<style>
 			code {
 				font-size: 1.2em;
@@ -33,7 +37,7 @@
 		<script src="./plugin/highlight/highlight.js"></script>
 		<script src="./plugin/anything/plugin.js"></script>
 		<script src="./plugin/asciinema/asciinema-player.js"></script>
-		<script src="./plugin/countdown/countdown.js"></script>
+		<script src="./plugin/countdown/countdown.js"></script> 
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
@@ -43,11 +47,17 @@
 				anything: [ 
                   {className: "asciicast",
                            initialize: (function(container, options) {
+									// Defaults for the asciinema player
 									const defaults = {'font-size': "large", theme: "asciinema", start : 0, "idle_time_limit": 2};
+
 									options = {...defaults, ...options};
 									//  console.log(options.URL, container, options);
 									 const player = asciinema.player.js.CreatePlayer(container, options.URL, options);
 									//  console.log(player);
+
+									// Add a callback to play/pause the player whenever the slide that it is on transitions
+									// Note this adds a separate callback for every player
+									// if you have many many players in a slide deck this may get slow, I haven't tested it
 									 Reveal.on( 'slidetransitionend', event => {
 										// console.log(player, event.currentSlide.contains(container));
 										if(event.currentSlide.contains(container)) {
