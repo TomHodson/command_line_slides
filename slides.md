@@ -35,12 +35,12 @@ Go to **www.menti.com** with code **9132 7354**
 
 - Different tools can be combined easily. <!-- .element: class="fragment" -->
 
-- Task can be automated easily using shell scripts. <!-- .element: class="fragment" -->
+- Tasks can be automated easily using shell scripts. <!-- .element: class="fragment" -->
 
 ---
 ## Why don't people just make a GUI?
-- Easier and faster to create. <!-- .element: class="fragment" -->
-- More flexible. <!-- .element: class="fragment" -->
+- CMD tools are easier and faster to create. <!-- .element: class="fragment" -->
+- They're also more flexible. <!-- .element: class="fragment" -->
 ---
 ## Using the command line
 ---
@@ -54,7 +54,7 @@ Go to **www.menti.com** with code **9132 7354**
 /cm/shared/applications/
 /home/tjones/notes.txt
 ```
-- A way to specifiy a file or folder with a text string
+- A way to specify a file or folder with a text string
 - We use them to tell commands where to look for files and folders
 - Note the similarity to URLs
 
@@ -112,7 +112,7 @@ To exit press `CTRL-X`
 $ mkdir folder # makes a directory
 $ mv file1 folder/file2 # moves and renames
 $ cp file1 folder/file2 # copies and renames
-$ rm file #deletes the file permenantly
+$ rm file #deletes the file permanently
 # be careful with rm!
 ```
 ---
@@ -175,7 +175,7 @@ cd filesize
 echo "numpy" > requirements.txt
 echo "# File Size" > README.md
 mkdir filesize
-cp ~/somehwere_else/filesize.py filesize/filesize.py
+cp ~/somewhere_else/filesize.py filesize/filesize.py
 python filesize/filesize.py README.md
 ```
 
@@ -254,6 +254,7 @@ echo I printed all the python files
 - `pip` (python) 
 - `conda` (python + other)
 - `npm` (javascript)
+- and many many others
 
 ---
 ## Pipes
