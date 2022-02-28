@@ -117,7 +117,7 @@ $ /Users/tom/filesize/filesizes.sh
 7
 10
 ```
-And this should work in any directory that contains txt files. If you get stuck, you can see a solution [here](https://github.com/TomHodson/command_line_slides/edit/main/task2.sh)
+And this should work in any directory that contains txt files. If you get stuck, you can see a solution [here](https://github.com/TomHodson/command_line_slides/blob/main/task2.sh)
 
 ### A recording of me doing the above, mistakes and all
 [![asciicast](https://asciinema.org/a/468329.svg)](https://asciinema.org/a/468329)
