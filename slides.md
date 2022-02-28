@@ -99,6 +99,7 @@ $ cd ../../  # go up two levels from wherever you are
 ## Looking in files
 
 ```console
+$ ls #see what's in the current directory
 $ cat file # outputs a file to the terminal 
 $ nano file # opens a file for basic editing
 ```
