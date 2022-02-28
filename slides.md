@@ -204,7 +204,7 @@ echo The variable is ${variable}
 ---
 ### Running a script
 ```bash
-sh my_script.sh
+bash my_script.sh
 ```
 Or
 ```bash
