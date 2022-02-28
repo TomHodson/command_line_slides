@@ -8,6 +8,7 @@ If you're not, then use `cd` to move there.
 pwd
 cd ~/Documents/my_temporary_project
 ```
+Particularly if you're on windows it's worth making sure that `pwd` evaluates to what you want.
 
 ### The shebang
 We'll go through it line by line, the first line is called an shebang, don't ask me why and it serves to say what interpreter to run for this file, Like python, shell script is an interpreted language. 
@@ -21,9 +22,9 @@ Using nano, or a text editor of your choice, open a file called `test.sh` and pu
 echo "Hello World!"
 ```
 
-Now there are two ways to run this, you either use the interpreter `sh` like this:
+Now there are two ways to run this, you either run bash as an interpreter the way you would python, like this:
 ```bash
-$ sh test.sh
+$ bash test.sh
 Hello World!
 ```
 Or you can run the command directly but it requires a one off change to the metadata of the file `chmod +x test.sh` adds a special flag to the file saying that it's executeable. 
@@ -34,13 +35,11 @@ Hello World!
 ```
 You only have to run `chmod +x` once for each new script.
 
-
-
 ## A more complex script
-Now let's start another script that prints the size of each txt file in the working directory. Call it `filesizes.sh`
+Now let's start another script that prints the size of each txt file in the working directory. Call it `filesizes.sh`. In principle you could type this all out into the command line itself, but it gets hard to type out a multiline command without making a mistake!
 
 ### Getting all the txt files in the working directory
-We will use something called a glob pattern. A glob pattern is a string which the command line interpreter will expand into a list of files matching the pattern. 
+We will use something called a wilcard (or glob pattern). A wildcard is a string which the command line interpreter will expand into a list of files matching the pattern.
 
 They're easiest to understand by example:
 ```bash
@@ -48,7 +47,7 @@ They're easiest to understand by example:
 *word* # all files that contain 'word'
 word* # all files that start with 'word'
 ```
-You can do much more complex patterns but we'll leave it at that for now. You can give a glob pattern to any command that accepts multiple arguments for instance `cat`:
+You can do much more complex patterns but we'll leave it at that for now. You can give a wildcard to any command that accepts multiple arguments for instance `cat`:
 ```bash
 cat *.py # outputs all the files in the pwd ending in *.py to the terminal
 ```
@@ -71,12 +70,12 @@ do
 done
 echo "This happens outside the loop"
 ```
-For loops in bash are enclosed by these `do` and `done` tags, indentation doesn't mean anything in bash but I've added it here to guide the eye. The `for file in *.txt` does two things, first it says that we want to loop over every file that matches the glob pattern `*.txt` and second that inside the loop we will refer to the file by the name `f`. Note that when we actually want the value of a variable in bash we must write `$f` or `${f}`.
+For loops in bash are enclosed by these `do` and `done` tags, indentation doesn't mean anything in bash but I've added it here to guide the eye. The `for file in *.txt` does two things, first it says that we want to loop over every file that matches the wildcard `*.txt` and second that inside the loop we will refer to the file by the name `f`. Note that when we actually want the value of a variable in bash we must write `$f` or `${f}`.
 
 Bash has some strange behaviours sometimes. For instance if you run the above in a directory where there are no txt files, it will print '*.txt' which is probably not what you would want, but hey, we all make mistakes.
 
 ### Calling your python script from anywhere
-Now we want to run the python script that we made in task 1 inside our bash script. We previously used:
+Next we want to run the python script that we made in task 1 inside our bash script. We previously used:
 ```bash
 python filesize/filesize.py README.md
 ```
@@ -110,7 +109,7 @@ $ echo "further words" > test3.txt
 
 Now I want you to put these things together to make a script called `filesizes.sh` that when run, prints the size of each txt file in the current folder. You'll need to combine the for loop and the python script with an absolute path. 
 
-When done you should be able to do this:
+When you're done you should be able to do this:
 ```bash
 $ cd tests
 $ /Users/tom/filesize/filesizes.sh 
@@ -118,7 +117,7 @@ $ /Users/tom/filesize/filesizes.sh
 7
 10
 ```
-And this should work in any directory that contains txt files.
+And this should work in any directory that contains txt files. If you get stuck, you can see a solution [here](https://github.com/TomHodson/command_line_slides/edit/main/task2.sh)
 
 ### A recording of me doing the above, mistakes and all
 [![asciicast](https://asciinema.org/a/468329.svg)](https://asciinema.org/a/468329)
