@@ -1,4 +1,4 @@
-# Intro to the Command Line - A slide deck
+# 💻 Intro to the Command Line - A slide deck
 [Click here to view the slide deck on github.io][slides]
 
 ![image](https://user-images.githubusercontent.com/2063944/153746049-6e4c10e2-63b3-4759-b436-5dc0eda5b728.png)
